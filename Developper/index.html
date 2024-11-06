@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            height: 80px;
+            width: auto;
+            display: flex;
+            font-family: sans-serif;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 119, 255, 0.55);
+        }
+        header .logo{
+            display: flex;
+            align-items: center;
+            margin-inline: 20px;
+        }
+        .logo span{
+            display: flex;
+            color: rgb(0, 110, 255);
+            font-weight: 700;
+            font-size: 30px;
+        }
+        .logo p{
+            font-weight: 600;
+            color: #fff;
+            font-size: 30px;
+        }
+        .navbar{
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav{
+            display: flex;
+            margin-right: 10px;
+        }
+        .navbar nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+        nav ul li{
+            margin-inline: 10px;
+            font-size: 20px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: 0.7s;
+        }
+        nav ul li a:hover{
+            color: rgb(0, 128, 255);
+        }
+        .Home{
+            display: grid;
+            font-family: sans-serif;
+            align-content: center;
+            height: 470px;
+        }
+        .Home .title{
+            display: flex;
+            align-items: center;
+            margin-left: 70px;
+        }
+        .Home .desc{
+            display: flex;
+            margin-left: 70px;
+            font-weight: 400;
+        }
+        .main-button{
+            display: flex;
+            margin-left: 70px;
+            margin-top: 20px;
+        }
+        .main-button button{
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: none;
+            transition: 1.5s;
+            background-color: rgb(0, 119, 255);
+        }
+        .main-button button:hover{
+            background-color: transparent;
+            border: 3px solid white;
+        }
+        .main-button button a{
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+        }
+        .social{
+            display: flex;
+            margin-left: 70px;
+        }
+        .social a{
+            color: #fff;
+            font-size: 20px;
+            margin-inline: 7px;
+            margin-top: 10px;
+            transition: 1s;
+        }
+        .social a:hover{
+            color: rgb(0, 136, 255);
+        }
+        .project{
+            height: 500px;
+            width: auto;
+            display: grid;
+            justify-items: center;
+            font-family: sans-serif;
+            background-color: #8e8e8e;
+        }
+        .project .titre h1{
+            margin-top: 20px;
+            color: #fff;
+            font-weight: 800;
+        }
+        .project .first{
+            display: flex;
+            justify-content: center;
+        }
+        .project .cart{
+            display: grid;
+            height: 340px;
+            width: 190px;
+            background-color: #fff;
+            margin-inline: 30px;
+            border-radius: 20px;
+            align-content: center;
+            justify-items: center;
+        }
+        .project .title{
+            text-align: center;
+        }
+        .project .cart .logo img{
+            height: 130px;
+            margin-top: -20px;
+        }
+        .cart .titre{
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .cart .desc{
+            display: flex;
+            font-size: 20px;
+            margin: 10px;
+        }
+        .cart .desc h5{
+            font-weight: 900;
+        }
+        .cart .desc a i{
+            margin-inline: 10px;
+        }
+        .cart .desc .html{
+            color: rgb(255, 102, 0);
+        }
+        .cart .desc .css{
+            color: rgb(0, 140, 255);
+        }
+        .price span{
+            color: green;
+            font-weight: 400;
+            font-size: 15px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .achat{
+            display: flex;
+        }
+        .achat button{
+            height: 30px;
+            width: 120px;
+            background-color: rgb(0, 88, 125);
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.452);
+            transition: 1.5s;
+        }
+        .achat button:hover{
+            transform: translateY(-10px);
+        }
+        .achat button a{
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+        }
+        footer{
+            display: grid;
+            height: 240px;
+            width: auto;
+            font-family: sans-serif;
+        }
+        footer .about{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+        }
+        .about .team{
+            display: grid;
+            font-size: 20px;
+            margin-inline: 20px;
+        }
+        .about .team a{
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.372);
+        }
+        .about .team a:hover{
+            color: chocolate;
+        }
+        .about .agence{
+            display: grid;
+            font-size: 20px;
+        }
+        .about .agence a{
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.372);
+        }
+        .about .agence a:hover{
+            color: chocolate;
+        }
+        .about .Develop{
+            display: grid;
+            font-size: 20px;
+        }
+        .about .Develop a{
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.372);
+        }
+        .about .Develop a:hover{
+            color: chocolate;
+        }
+        .main-info{
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+        .main-info .info{
+            display: grid;
+            padding: 10px;
+        }
+        .main-info .info span{
+            font-size: 20px;
+        }
+        .main-info .info a{
+            text-decoration: none;
+            color: #8d8d8d;
+            font-size: 20px;
+        }
+        .main-info .info a:hover{
+            color: chocolate;
+        }
+        .main-info .social{
+            display: flex;
+            padding: 5px;
+            margin-right: 30px;
+            border-top: 3px solid rgba(0, 0, 0, 0.484);
+        }
+        .main-info .social a{
+            color: black;
+            font-size: 25px;
+            transition: 1s;
+        }
+        .social .lin:hover{
+            color: rgb(0, 132, 255);
+        }
+        .social .fb:hover{
+            color: rgb(0, 42, 255);
+        }
+        .social .insta:hover{
+            color: rgb(255, 0, 238);
+        }
+        .social .wat:hover{
+            color: rgb(0, 156, 10);
+        }
+        .social .yt:hover{
+            color: rgb(255, 0, 0);
+        }
+        .social .git:hover{
+            color: purple;
+        }
+        footer .copyright{
+            display: flex;
+            padding: 20px 5%;
+            background-color: #ffffff;
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: capitalize;
+            border-top: 1px solid black;
+            cursor: pointer;
+        }
+        .copyright span{
+            display: flex;
+        }
+        .copyright span p{
+            margin-left: 4px;
+        }
+        .copyright span p:hover{
+            color: rgb(0, 115, 255);
+        }
+    </style>
+    <title>Home | Developper</title>
+</head>
+<body  background="img/vignet.jpg">
+    <header>
+        <div class="logo">
+            <span>Niz<p>Developper</p></span>
+        </div>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="Home">
+        <div class="title">
+            <h1>Hello, My name is Nizar</h1>
+        </div>
+        <div class="desc">
+            <p>I'm a front-end Developper</p>
+        </div>
+        <div class="main-button">
+            <button>
+               <a href="#">See mor about me!</a>
+            </button>
+        </div>
+        <div class="social">
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </section>
+    <section class="project">
+        <div class="titre">
+            <h1>My Personnal Project</h1>
+        </div>
+        <div class="first">
+            <div class="cart">
+                <div class="logo">
+                    <img src="https://img.icons8.com/fluency/200/web-design--v1.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Store web</h1>
+                </div>
+                <div class="desc">
+                    <a class="html" href="#"><i id="Html" class="fa-brands fa-html5"></i></a>
+                    <h5>Html</h5>
+                    <a class="css" href="#"><i id="css" class="fa-brands fa-css3-alt"></i></a>
+                    <h5>Css</h5>
+                </div>
+                <div class="price">
+                    <span>49.00DH</span>
+                </div>
+                <div class="achat">
+                    <button><a href="#">Buy Now</a></button>
+                </div>
+            </div>
+            <div class="cart">
+                <div class="logo">
+                    <img src="https://img.icons8.com/fluency/200/web-design--v1.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Store web</h1>
+                </div>
+                <div class="desc">
+                    <a class="html" href="#"><i class="fa-brands fa-html5"></i></a>
+                    <h5>Html</h5>
+                    <a class="css" href="#"><i class="fa-brands fa-css3-alt"></i></a>
+                    <h5>Css</h5>
+                </div>
+                <div class="price">
+                    <span>49.00DH</span>
+                </div>
+                <div class="achat">
+                    <button><a href="#">Buy Now</a></button>
+                </div>
+            </div>
+            <div class="cart">
+                <div class="logo">
+                    <img src="https://img.icons8.com/fluency/200/web-design--v1.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Store web</h1>
+                </div>
+                <div class="desc">
+                    <a class="html" href="#"><i class="fa-brands fa-html5"></i></a>
+                    <h5>Html</h5>
+                    <a class="css" href="#"><i class="fa-brands fa-css3-alt"></i></a>
+                    <h5>Css</h5>
+                </div>
+                <div class="price">
+                    <span>49.00DH</span>
+                </div>
+                <div class="achat">
+                    <button><a href="#">Buy Now</a></button>
+                </div>
+            </div>
+            <div class="cart">
+                <div class="logo">
+                    <img src="https://img.icons8.com/fluency/200/web-design--v1.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Store web</h1>
+                </div>
+                <div class="desc">
+                    <a class="html" href="#"><i class="fa-brands fa-html5"></i></a>
+                    <h5>Html</h5>
+                    <a class="css" href="#"><i class="fa-brands fa-css3-alt"></i></a>
+                    <h5>Css</h5>
+                </div>
+                <div class="price">
+                    <span>49.00DH</span>
+                </div>
+                <div class="achat">
+                    <button><a href="#">Buy Now</a></button>
+                </div>
+            </div>
+            <div class="cart">
+                <div class="logo">
+                    <img src="https://img.icons8.com/fluency/200/web-design--v1.png" alt="">
+                </div>
+                <div class="title">
+                    <h1>Store web</h1>
+                </div>
+                <div class="desc">
+                    <a class="html" href="#"><i class="fa-brands fa-html5"></i></a>
+                    <h5>Html</h5>
+                    <a class="css" href="#"><i class="fa-brands fa-css3-alt"></i></a>
+                    <h5>Css</h5>
+                </div>
+                <div class="price">
+                    <span>49.00DH</span>
+                </div>
+                <div class="achat">
+                    <button><a href="#">Buy Now</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="about">
+            <div class="team">
+                <span>Team</span>
+                <a href="#">Developper</a>
+                <a href="#">Designer</a>
+                <a href="#">Printer</a>
+                <a href="#">Data developper</a>
+            </div>
+            <div class="agence">
+                <span>Pages Personnal</span>
+                <a href="#">Home</a>
+                <a href="#">Abonemments</a>
+                <a href="#">Abouts</a>
+                <a href="#">Service</a>
+            </div>
+            <div class="Develop">
+                <span>Developpers</span>
+                <a href="#">Frot-end</a>
+                <a href="#">Back-end</a>
+                <a href="#">Full-stuck</a>
+                <a href="#">Data engigner</a>
+            </div>
+            <div class="main-info">
+                <div class="info">
+                    <span>About</span>
+                    <a href="#">Manager Cokoies</a>
+                    <a href="#">Sécurity</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Abouts</a>
+                </div>
+                <div class="social">
+                    <a class="git" href="#"><i class="fa-brands fa-github"></i></a>
+                    <a class="lin" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="fb" href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a class="insta" href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="yt" href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a class="wat" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>Copyright 2024 | Developped By<p>Nizaraziz</p></span>
+        </div>
+    </footer>
+</body>
+</html>
